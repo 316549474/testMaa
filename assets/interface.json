@@ -4,8 +4,8 @@
     // 文档：https://maafw.xyz/docs/3.3-ProjectInterfaceV2
     // 示例：https://github.com/MaaXYZ/MaaFramework/blob/main/sample/interface.json
     "interface_version": 2,
-    "name": "MaaXXX",
-    "description": "这是一个使用 MaaFramework 创建的新项目。",
+    "name": "MaaZJCS",
+    "description": "MaaFramework。",
     "contact": "QQ群: 123456789",
     "license": "MIT",
     "welcome": "首次使用！欢迎使用 MAA!",
@@ -60,18 +60,18 @@
     // },
     "task": [
         {
-            "name": "普通任务",
+            "name": "普通任fa务",
             "entry": "MyTask1"
         },
         {
-            "name": "选项任务",
+            "name": "选项任务dasd",
             "entry": "MyTask2",
             "option": [
                 "任务选项1"
             ]
         },
         {
-            "name": "参数任务",
+            "name": "参数任asdas务",
             "entry": "MyTask3",
             "option": [
                 "任务选项1"
@@ -79,7 +79,7 @@
             "pipeline_override": {}
         },
         {
-            "name": "带Custom的任务",
+            "name": "带Cusdastom的任务",
             "entry": "MyTask4"
         }
     ],
