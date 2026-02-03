@@ -1,0 +1,96 @@
+{
+    "BeastTrial": {
+        "next": [
+            "Click_Icon",
+            "[JumpBack]BeastTrial"
+        ]
+    },
+    "Click_Icon": {
+        "recognition": "TemplateMatch",
+        "template": "笔记.png",
+        "action": "Click",
+        "next": [
+            "Find_DailyActivity",
+            "[JumpBack]BeastTrial"
+        ]
+    },
+    "Find_DailyActivity": {
+        "recognition": "OCR",
+        "expected": "每日活动",
+        "action": "Click",
+        "next": [
+            "Find_BeastTrial",
+            "[JumpBack]Find_DailyActivity"
+        ]
+    },
+    "Find_BeastTrial": {
+        "recognition": "OCR",
+        "expected": "圣兽试炼",
+        "action": "Click",
+        "next": [
+            "Click_MatchButton",
+            "[JumpBack]Find_BeastTrial"
+        ]
+    },
+    "Click_MatchButton": {
+        "recognition": "TemplateMatch",
+        "template": "匹配.png",
+        "threshold": 0.75,
+        "action": "Click",
+        "next": [
+            "Wait_Accept"
+        ]
+    },
+    "Wait_Accept": {
+        "recognition": "OCR",
+        "expected": "接受",
+        "action": "Click",
+        "timeout": 600000,
+        "next": [
+            "Wait_Prepare",
+            "Match_Rejected",
+            "[JumpBack]Wait_Accept"
+        ]
+    },
+    "Match_Rejected": {
+        "recognition": "OCR",
+        "expected": "拒绝",
+        "action": "DoNothing",
+        "next": [
+            "Click_MatchButton"
+        ]
+    },
+    "Wait_Prepare": {
+        "recognition": "TemplateMatch",
+        "template": "准备.png",
+        "threshold": 0.75,
+        "action": "Click",
+        "next": [
+            "Wait_Close"
+        ]
+    },
+    "Wait_Close": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "click_position": [
+            50, 50
+        ],
+        "rate_limit": 10000,
+        "timeout": 600000,
+        "next": [
+            "SetReplaysTimes",
+            "[JumpBack]Wait_Close"
+        ]
+    },
+    "SetReplaysTimes": {
+        "action": "DoNothing",
+        "next": [
+            "BeastTrial",
+            "Exit_BeastTrial"
+        ]
+    },
+    "Exit_BeastTrial": {
+        "action": "DoNothing"
+    }
+}
