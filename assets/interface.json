@@ -58,32 +58,25 @@
     ],
     "option": {
         "循环次数": {
-            "cases": [
+            "type": "input",
+            "label": "输入循环次数",
+            "description": "请输入想要循环的次数",
+            "inputs": [
                 {
-                    "name": "1次",
-                    "pipeline_override": {
-                        "SetReplaysTimes": {
-                            "expected": "1"
-                        }
-                    }
-                },
-                {
-                    "name": "3次",
-                    "pipeline_override": {
-                        "SetReplaysTimes": {
-                            "expected": "3"
-                        }
-                    }
-                },
-                {
-                    "name": "5次",
-                    "pipeline_override": {
-                        "SetReplaysTimes": {
-                            "expected": "5"
-                        }
-                    }
+                    "name": "次数",
+                    "label": "循环次数",
+                    "description": "输入1-100之间的整数",
+                    "default": "1",
+                    "pipeline_type": "string",
+                    "verify": "^[1-9]\\d*$",
+                    "max_length": 3
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "SetReplaysTimes": {
+                    "expected": "{次数}"
+                }
+            }
         }
     }
 }

@@ -86,7 +86,7 @@
     "SetReplaysTimes": {
         "action": "DoNothing",
         "next": [
-            "BeastTrial",
+            "Click_MatchButton",
             "Exit_BeastTrial"
         ]
     },
