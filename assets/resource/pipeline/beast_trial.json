@@ -45,7 +45,7 @@
         "recognition": "OCR",
         "expected": "接受",
         "action": "Click",
-        "timeout": 600000,
+        "timeout": -1,
         "next": [
             "Wait_Prepare",
             "Match_Rejected",
@@ -57,12 +57,13 @@
         "expected": "拒绝",
         "action": "DoNothing",
         "next": [
-            "Click_MatchButton"
+            "Wait_Accept"
         ]
     },
     "Wait_Prepare": {
         "recognition": "TemplateMatch",
         "template": "准备.png",
+        "timeout": -1,
         "threshold": 0.75,
         "action": "Click",
         "next": [
